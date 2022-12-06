@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MyAllegionUtility
 {
-    public class Array
+    public class MyArray
     {
         public static int BinarySearch(int[] array, object value) {
             return 0;

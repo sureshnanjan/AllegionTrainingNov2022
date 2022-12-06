@@ -10,7 +10,7 @@ namespace AllegionTrainingNov2022
     {
         static void Main(string[] args)
         {
-            string MyAllegionUtility.Geetings inst1  = new MyAllegionUtility.Geetings();
+            MyAllegionUtility.Geetings inst1 = new MyAllegionUtility.Geetings();
             string ans1 = inst1.SayHelloQA();
             if (ans1.Equals("Welcome to QA"))
             {
@@ -21,5 +21,6 @@ namespace AllegionTrainingNov2022
 
 
 
+        }
     }
 }
