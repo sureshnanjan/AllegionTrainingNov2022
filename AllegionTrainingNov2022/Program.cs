@@ -10,16 +10,14 @@ namespace AllegionTrainingNov2022
     {
         static void Main(string[] args)
         {
-            MyAllegionUtility.Geetings inst1  = new MyAllegionUtility.Geetings();
+            MyAllegionUtility.Geetings inst1 = new MyAllegionUtility.Geetings();
             string ans1 = inst1.SayHelloQA();
             if (ans1.Equals("Welcome to QA"))
             {
                 Console.WriteLine("Success");
             }
             else { Console.WriteLine("Failure"); }
-
-
-
-
+        }
     }
 }
+
