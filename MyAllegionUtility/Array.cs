@@ -8,7 +8,7 @@ namespace MyAllegionUtility
 {
     public class MyArray
     {
-        public static int BinarySearch(int[] array, object value) {
+        public int BinarySearch(int[] array, object value) {
             return 0;
         }
     }
