@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +19,23 @@ namespace AllegionTrainingNov2022
                 Console.WriteLine("Success");
             }
             else { Console.WriteLine("Failure"); }
+            ChromeDriver _browser= new ChromeDriver();
+            _browser.Url = "https://the-internet.herokuapp.com";
+            Console.WriteLine(_browser.Title);
+            IWebElement headingElement = _browser.FindElement(By.TagName("H1"));
+            string actulalHEadingText = headingElement.Text;
+            if (actulalHEadingText.Equals("Welcome to the-internet"))
+            {
+                Console.WriteLine("Yes, Test is successed");
+            }
+            else
+            {
+                Console.WriteLine("No, Its a failure");
+            }
+            _browser.Close();
+            // headingElement.Text
+           // Console.WriteLine(headingElement.Text);
+           // _browser.Close();
 
 
 
