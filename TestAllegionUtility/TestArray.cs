@@ -11,11 +11,11 @@ namespace TestAllegionUtility
         {
             // AAA Arrange , Act , Assert
             /// Arrange
-            Array sut = new Array();
+            MyArray sut = new MyArray();
             int[] inputs = { 1, 2, 3 };
             int searchItem = 2;
             // ACT
-            int actual = Array.BinarySearch(inputs,searchItem);
+            int actual = MyArray.BinarySearch(inputs,searchItem);
             /// 
             // Assert
 
@@ -25,11 +25,11 @@ namespace TestAllegionUtility
         [TestMethod]
         public void BinarySearcheCorrectlyReturnExistingItemBegin()
         {
-            Array sut = new Array();
+            MyArray sut = new MyArray();
             int[] inputs = { 1, 2, 3 };
             int searchItem = 2;
             // ACT
-            int actual = Array.BinarySearch(inputs, searchItem);
+            int actual = MyArray.BinarySearch(inputs, searchItem);
             /// 
             // Assert
 
@@ -39,11 +39,11 @@ namespace TestAllegionUtility
         [TestMethod]
         public void BinarySearcheCorrectlyReturnExistingItemEnd()
         {
-            Array sut = new Array();
+            MyArray sut = new MyArray();
             int[] inputs = { 1, 2, 3 };
             int searchItem = 3;
             // ACT
-            int actual = Array.BinarySearch(inputs, searchItem);
+            int actual = MyArray.BinarySearch(inputs, searchItem);
             /// 
             // Assert
 
