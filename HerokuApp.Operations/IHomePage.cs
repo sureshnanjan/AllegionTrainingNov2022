@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace HerokuApp.Operations
 {
-    internal interface IHomePage
+    public interface IHomePage
     {
+        void verifyHeadder();
+
+        void verifySubheading();
+
     }
 }
