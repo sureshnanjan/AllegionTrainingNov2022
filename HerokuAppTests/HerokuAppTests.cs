@@ -92,8 +92,8 @@ namespace HerokuAppTests
             ReadOnlyCollection<IWebElement> buttonDelete = _browser.FindElements(By.ClassName("added-manually"));
 
 
-            //Assert
-            Assert.AreEqual(6, buttonDelete.Count());
+            //Assert 
+            Assert.AreEqual(6, buttonDelete.Count()); //it will fail
 
 
         }

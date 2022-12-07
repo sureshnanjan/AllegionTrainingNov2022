@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAllegionUtility", "Test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuAppTests", "HerokuAppTests\HerokuAppTests.csproj", "{C08F4D29-2631-444B-875A-0BA3909730D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.WebImplementations", "HerokuApp.WebImplementations\HerokuApp.WebImplementations.csproj", "{C0367496-711F-4363-85E8-55F66C45F4D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroko.Operations", "Heruko.Operations\Heroko.Operations.csproj", "{2CF0A333-CAB9-4D51-9E17-BEEF0DEA475E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokoApp.MobileImplementations", "HerokoApp.MobileImplementations\HerokoApp.MobileImplementations.csproj", "{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,18 @@ Global
 		{C08F4D29-2631-444B-875A-0BA3909730D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C08F4D29-2631-444B-875A-0BA3909730D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C08F4D29-2631-444B-875A-0BA3909730D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0367496-711F-4363-85E8-55F66C45F4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0367496-711F-4363-85E8-55F66C45F4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0367496-711F-4363-85E8-55F66C45F4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0367496-711F-4363-85E8-55F66C45F4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CF0A333-CAB9-4D51-9E17-BEEF0DEA475E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CF0A333-CAB9-4D51-9E17-BEEF0DEA475E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CF0A333-CAB9-4D51-9E17-BEEF0DEA475E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CF0A333-CAB9-4D51-9E17-BEEF0DEA475E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
