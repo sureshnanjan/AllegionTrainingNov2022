@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HerokuAppPageObjects
+namespace HerokuApp.Operations
 {
-    public class Class1
+    internal interface IHomePage
     {
     }
 }

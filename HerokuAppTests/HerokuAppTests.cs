@@ -18,41 +18,43 @@ namespace HerokuAppTests
         [TestMethod]
         public void TestAddRemoveElementsFunctionsCorrectlyforOneItem()
         {
-            //AAA
-            EdgeDriver driver = new EdgeDriver();
-            driver.Url = "https://the-internet.herokuapp.com/";
-            IWebElement LinkButton = driver.FindElement(By.LinkText("Add/Remove Elements"));
-            LinkButton.Click();
 
-            IWebElement buttonadd = driver.FindElement(By.TagName("button"));
-            buttonadd.Click();
+            
+            ////AAA
+            //EdgeDriver driver = new EdgeDriver();
+            //driver.Url = "https://the-internet.herokuapp.com/";
+            //IWebElement LinkButton = driver.FindElement(By.LinkText("Add/Remove Elements"));
+            //LinkButton.Click();
 
-            ReadOnlyCollection<IWebElement> buttondelete = driver.FindElements(By.ClassName("added-manually"));
+            //IWebElement buttonadd = driver.FindElement(By.TagName("button"));
+            //buttonadd.Click();
 
-            Assert.AreEqual(1, buttondelete.Count);
+            //ReadOnlyCollection<IWebElement> buttondelete = driver.FindElements(By.ClassName("added-manually"));
+
+            //Assert.AreEqual(1, buttondelete.Count);
 
 
 
         }
-        [TestMethod]
+        //[TestMethod]
 
-        public void TestRemoveElementsFunctionsCorrectlyForOneItem()
-        {
-            //AAA
-            EdgeDriver driver = new EdgeDriver();
-            driver.Url = "https://the-internet.herokuapp.com/";
-            IWebElement LinkButton = driver.FindElement(By.LinkText("Add/Remove Elements"));
-            LinkButton.Click();
+        //public void TestRemoveElementsFunctionsCorrectlyForOneItem()
+        //{
+        //    //AAA
+        //    EdgeDriver driver = new EdgeDriver();
+        //    driver.Url = "https://the-internet.herokuapp.com/";
+        //    IWebElement LinkButton = driver.FindElement(By.LinkText("Add/Remove Elements"));
+        //    LinkButton.Click();
 
-            IWebElement buttonadd = driver.FindElement(By.TagName("button"));
-            buttonadd.Click();
+        //    IWebElement buttonadd = driver.FindElement(By.TagName("button"));
+        //    buttonadd.Click();
 
-            IWebElement buttondelete = driver.FindElement(By.ClassName("added-manually"));
-            buttondelete.Click();
+        //    IWebElement buttondelete = driver.FindElement(By.ClassName("added-manually"));
+        //    buttondelete.Click();
 
-            ReadOnlyCollection<IWebElement> buttondeleted = driver.FindElements(By.ClassName("added-manually"));
+        //    ReadOnlyCollection<IWebElement> buttondeleted = driver.FindElements(By.ClassName("added-manually"));
 
-            Assert.AreEqual(0, buttondeleted.Count);
-        }
+        //    Assert.AreEqual(0, buttondeleted.Count);
+        //}
     }
 }
