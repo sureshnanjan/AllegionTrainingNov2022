@@ -42,7 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IABTesting.cs" />
+    <Compile Include="ICheckboxes.cs" />
+    <Compile Include="IDragAndDrop.cs" />
     <Compile Include="IHomePage.cs" />
+    <Compile Include="IHover.cs" />
+    <Compile Include="ILargeAndDeepDOM.cs" />
+    <Compile Include="IShadowDOM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

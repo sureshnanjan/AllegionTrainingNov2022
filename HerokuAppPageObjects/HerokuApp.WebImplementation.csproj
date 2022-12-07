@@ -43,8 +43,13 @@
   <ItemGroup>
     <Compile Include="ABTestPage.cs" />
     <Compile Include="AddRemoveElements.cs" />
+    <Compile Include="Checkboxes.cs" />
+    <Compile Include="DragAndDrop.cs" />
     <Compile Include="HomePage1.cs" />
+    <Compile Include="Hover.cs" />
+    <Compile Include="LargeAndDeepDOM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShadowDOM.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HerokuApp.Operations\HerokuApp.Operations.csproj">
