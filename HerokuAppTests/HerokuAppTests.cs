@@ -42,7 +42,7 @@ namespace HerokuAppTests
 
 
             //Assert
-           Assert.AreEqual(2, buttonDelete.Count());
+           Assert.AreEqual(1, buttonDelete.Count());
 
 
         }
@@ -57,17 +57,79 @@ namespace HerokuAppTests
             buttonAB.Click();
             IWebElement buttonElement = _browser.FindElement(By.TagName("button"));
             buttonElement.Click();
-            ReadOnlyCollection<IWebElement> buttonDelete = _browser.FindElements(By.ClassName("added-manually"));
+
 
             //Act
-            
+            IWebElement buttonDelete = _browser.FindElement(By.ClassName("added-manually"));
+            buttonDelete.Click();
+            ReadOnlyCollection<IWebElement> buttonDeleteCount = _browser.FindElements(By.ClassName("added-manually"));
+
 
 
             //Assert
-            Assert.AreEqual(2, buttonDelete.Count());
+            Assert.AreEqual(0, buttonDeleteCount.Count());
 
 
         }
+        [TestMethod]
+        public void AddElemetsFunctionsCorrectlyforMultipleItem()
+        {
+            //AAA
+            //Arrange
+            ChromeDriver _browser = new ChromeDriver();
+            _browser.Url = "https://the-internet.herokuapp.com/";
+            IWebElement buttonAB = _browser.FindElement(By.LinkText("Add/Remove Elements"));
+            buttonAB.Click();
+
+
+            //Act
+            IWebElement buttonElement = _browser.FindElement(By.TagName("button"));
+            buttonElement.Click();
+            buttonElement.Click();
+            buttonElement.Click();
+            buttonElement.Click();
+            buttonElement.Click();
+            ReadOnlyCollection<IWebElement> buttonDelete = _browser.FindElements(By.ClassName("added-manually"));
+
+
+            //Assert
+            Assert.AreEqual(6, buttonDelete.Count());
+
+
+        }
+        [TestMethod]
+        public void RemoveElemetsFunctionsCorrectlyforMultipleItem()
+        {
+            //AAA
+            //Arrange
+            ChromeDriver _browser = new ChromeDriver();
+            _browser.Url = "https://the-internet.herokuapp.com/";
+            IWebElement buttonAB = _browser.FindElement(By.LinkText("Add/Remove Elements"));
+            buttonAB.Click();
+            IWebElement buttonElement = _browser.FindElement(By.TagName("button"));
+            buttonElement.Click();
+            buttonElement.Click();
+            buttonElement.Click();
+            buttonElement.Click();
+            buttonElement.Click();
+
+
+            //Act
+            IWebElement buttonDelete = _browser.FindElement(By.ClassName("added-manually"));
+            buttonDelete.Click();
+       
+
+            ReadOnlyCollection<IWebElement> buttonDeleteCount = _browser.FindElements(By.ClassName("added-manually"));
+
+
+
+            //Assert
+            Assert.AreEqual(4, buttonDeleteCount.Count());
+
+
+        }
+
+
 
     }
 }
