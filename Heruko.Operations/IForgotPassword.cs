@@ -4,15 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Heroku.Operations
+namespace Heruko.Operations
 {
-    public interface IABTesting
+    public interface IForgotPassword
     {
-        void verifyParagraph();
         void verifyHeading();
+        void verifyLabel();
+        void verifyInput();
+        void verifyRetrievePasswordButton();
 
-
-
-        string paragraph { get; }
     }
 }

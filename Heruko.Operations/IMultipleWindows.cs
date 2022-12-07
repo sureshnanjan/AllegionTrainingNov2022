@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace HerokuApp.MobileImplementations
+namespace Heruko.Operations
 {
-    public class ABTestPage
+    public interface IMultipleWindows
     {
+        void verifyHeading();
+        void verifyClickHereLink();
+
     }
 }

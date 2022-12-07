@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HerokoApp.MobileImplementations
+namespace HerokuApp.MobileImplementations
 {
     public class HomePage
     {

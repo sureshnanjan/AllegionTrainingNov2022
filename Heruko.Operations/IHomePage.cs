@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Heruko.Operations
+namespace Heroku.Operations
 {
     internal interface IHomePage
     {

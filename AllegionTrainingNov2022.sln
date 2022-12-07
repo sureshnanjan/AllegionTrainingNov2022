@@ -13,9 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuAppTests", "HerokuApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.WebImplementations", "HerokuApp.WebImplementations\HerokuApp.WebImplementations.csproj", "{C0367496-711F-4363-85E8-55F66C45F4D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroko.Operations", "Heruko.Operations\Heroko.Operations.csproj", "{2CF0A333-CAB9-4D51-9E17-BEEF0DEA475E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroku.Operations", "Heruko.Operations\Heroku.Operations.csproj", "{2CF0A333-CAB9-4D51-9E17-BEEF0DEA475E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokoApp.MobileImplementations", "HerokoApp.MobileImplementations\HerokoApp.MobileImplementations.csproj", "{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.MobileImplementations", "HerokoApp.MobileImplementations\HerokuApp.MobileImplementations.csproj", "{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
