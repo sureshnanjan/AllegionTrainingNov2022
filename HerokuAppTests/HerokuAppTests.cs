@@ -1,8 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Edge;
 using System;
-using System.Collections.ObjectModel;
 
 namespace HerokuAppTests
 {
@@ -18,8 +15,9 @@ namespace HerokuAppTests
         [TestMethod]
         public void TestAddRemoveElementsFunctionsCorrectlyforOneItem()
         {
+            HomePage page = new HomePage();
+            page.NavigateToPage("AB Testing").validateTextMessage();
 
-            
             ////AAA
             //EdgeDriver driver = new EdgeDriver();
             //driver.Url = "https://the-internet.herokuapp.com/";
