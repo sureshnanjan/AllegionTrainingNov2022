@@ -13,7 +13,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AllegionSDK", "AllegionSDK\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuAppTests", "HerokuAppTests\HerokuAppTests.csproj", "{EEAA0E58-56BE-450F-B1EE-530833DC8206}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuAppPageObjects", "HerokuAppPageObjects\HerokuAppPageObjects.csproj", "{86F4AC1A-16AE-419D-B65B-DE88BF7D60AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.WebImplementation", "HerokuAppPageObjects\HerokuApp.WebImplementation.csproj", "{86F4AC1A-16AE-419D-B65B-DE88BF7D60AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.Operations", "HerokuApp.Operations\HerokuApp.Operations.csproj", "{7C0357F8-912F-4123-872A-71A027EC8B20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.MobileImplementation", "HerokuApp.MobileImplementation\HerokuApp.MobileImplementation.csproj", "{42A0D9FB-4906-474D-8259-70AE71ED8134}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +49,14 @@ Global
 		{86F4AC1A-16AE-419D-B65B-DE88BF7D60AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86F4AC1A-16AE-419D-B65B-DE88BF7D60AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86F4AC1A-16AE-419D-B65B-DE88BF7D60AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C0357F8-912F-4123-872A-71A027EC8B20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C0357F8-912F-4123-872A-71A027EC8B20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C0357F8-912F-4123-872A-71A027EC8B20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C0357F8-912F-4123-872A-71A027EC8B20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42A0D9FB-4906-474D-8259-70AE71ED8134}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42A0D9FB-4906-474D-8259-70AE71ED8134}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42A0D9FB-4906-474D-8259-70AE71ED8134}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42A0D9FB-4906-474D-8259-70AE71ED8134}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

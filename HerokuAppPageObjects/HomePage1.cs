@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HerokuAppPageObjects
+namespace HerokuApp.WebImplementation
 {
-    public class HomePage
+    public class HomePage1
     {
     }
 }
