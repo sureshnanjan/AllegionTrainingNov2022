@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace MyAllegionUtility
 {
-    public class Array
+    public class ArrayClass
     {
         public static int BinarySearch(int[] array, object value) {
-            return 0;
+            return Array.BinarySearch(array, value);
         }
     }
 }
