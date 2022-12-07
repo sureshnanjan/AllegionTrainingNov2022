@@ -24,7 +24,7 @@ namespace HerukoAppTests
 
             IWebElement AddButtonClick = _browser.FindElement(By.XPath("//a[text()='Add/Remove Elements']"));
             AddButtonClick.Click();
-
+///act
             IWebElement buttonFirst =_browser.FindElement(By.XPath("//button[text()='Add Element']"));
             buttonFirst.Click();
            
@@ -54,8 +54,6 @@ namespace HerukoAppTests
             ReadOnlyCollection<IWebElement> countButton = _browser.FindElements(By.XPath("//button[@class='added-manually']"));
 
             Assert.AreEqual(0, countButton.Count);
-
-
         }
     }
 }
