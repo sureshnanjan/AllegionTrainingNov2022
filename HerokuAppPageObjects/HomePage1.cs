@@ -8,11 +8,12 @@ using HerokuAppPageObjects;
 
 namespace HerokuApp.WebImplementation
 {
-    public class HomePage1: IHomePage
+    public class HomePage1: BasePage, IHomePage
     {
-        private IWebDriver _driver;
         private By heading = By.TagName("H1");
         private static By abtestLink = By.LinkText("A/B Testing");
+        private static By alertsLink = By.LinkText("JavaScript Alerts");
+        private static By dragDropLink = By.LinkText("Drag and Drop");
         //private By 
         public HomePage1()
         {
@@ -20,17 +21,17 @@ namespace HerokuApp.WebImplementation
             switch (readConfig("browser"))
             {
                 case "chrome": 
-                    _driver = new RemoteWebDriver(new Uri("http://localhost:8085"), new ChromeOptions());
+                    this._driver = new RemoteWebDriver(new Uri("http://localhost:8085"), new ChromeOptions());
                     break;
                 case "firefox":
-                    _driver = new RemoteWebDriver(new Uri("http://localhost:8086"), new FirefoxOptions());
+                    this._driver = new RemoteWebDriver(new Uri("http://localhost:8086"), new FirefoxOptions());
                     break;
                 default:
-                    _driver = new ChromeDriver();
+                    this._driver = new ChromeDriver();
                     break;
             }
 
-            _driver.Navigate().GoToUrl(readServerURL());
+            this._driver.Navigate().GoToUrl(readServerURL());
 
            
         }
@@ -39,7 +40,13 @@ namespace HerokuApp.WebImplementation
             _driver.FindElement(abtestLink).Click();
             return new ABTestPage(_driver);
         }
-        
+
+        public BasicAuthPage navigateToBasicAuth(string uname, string pwd)
+        {
+            _driver.Navigate().GoToUrl($"https://{uname}:{pwd}@the-internet.herokuapp.com/basic_auth");
+            return new BasicAuthPage(_driver);
+        }
+
         private string readConfig(string item) {
             return "chrome";
         }
@@ -48,13 +55,22 @@ namespace HerokuApp.WebImplementation
             return "https://the-internet.herokuapp.com/";
         }
 
-        public void CloseBrowser() {
-            this._driver.Close();
-        }
         public void DisableABTesting()
         {
             this._driver.Manage().Cookies.AddCookie(new Cookie("optimizelyOptOut", "true"));
             this._driver.Navigate().Refresh();
+        }
+
+        public AlertsPage navigateToAlerts()
+        {
+            this._driver.FindElement(alertsLink).Click();
+            return new AlertsPage(this._driver);
+        }
+
+        public DragDropPage navigateToDragDrop()
+        {
+            this._driver.FindElement(dragDropLink).Click();
+            return new DragDropPage(this._driver);
         }
     }
 }

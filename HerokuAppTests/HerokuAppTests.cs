@@ -38,6 +38,34 @@ namespace HerokuAppTests
             Assert.AreEqual("No A/B Test", testPage.HeadingText);
         }
 
+        [TestMethod]
+        public void BasicAuthWorkswithCorrectCredentials() {
+            BasicAuthPage result = _page.navigateToBasicAuth("admin", "admin");
+            Assert.AreEqual("Basic Auth", result.Heading);
+        }
+
+        [TestMethod]
+        public void BasicAuthWorkswithInCorrectCredentials()
+        {
+            BasicAuthPage result = _page.navigateToBasicAuth("incorrect", "admin");
+            Assert.AreEqual("Unauthorised", result.Heading);
+        }
+
+        [TestMethod]
+        public void AlertsHandlingWorks() {
+            AlertsPage result = _page.navigateToAlerts();
+            result.InvokeJsAlert();
+            string actualText =  result.getText();
+            result.Accept();
+            Assert.AreEqual("I am a JS Alert", actualText);
+        }
+
+        [TestMethod]
+        public void DragAtoB() {
+            DragDropPage result = _page.navigateToDragDrop();
+            result.dragAtoB();
+            Assert.AreEqual("B", result.FirstElement);
+        }
 
         [TestCleanupAttribute]
         public void CleanUp() {
