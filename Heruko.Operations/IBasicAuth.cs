@@ -8,7 +8,6 @@ namespace Heruko.Operations
 {
     public interface IBasicAuth
     {
-        void VerifyAuthWithCorrectCredentials();
-        void VerifyAuthWithInCorrectCredentials();
+         string verifyHeading();
     }
 }

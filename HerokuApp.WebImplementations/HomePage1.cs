@@ -64,8 +64,13 @@ namespace HerokuApp.WebImplementations
             this._driver.Manage().Cookies.AddCookie(new Cookie("optimizelyOptOut", "true"));
             this._driver.Navigate().Refresh();
         }
+        public BasicAuth navigateToBasicAuth(string uname, string pass)
+        {
+            _driver.Navigate().GoToUrl($"https://{uname}:{pass}@the-internet.herokuapp.com/basic_auth");
+            return new BasicAuth(_driver);
+        }
 
 
 
+        }
     }
-}
