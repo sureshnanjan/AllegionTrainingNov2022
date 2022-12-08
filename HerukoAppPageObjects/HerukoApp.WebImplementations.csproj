@@ -55,6 +55,10 @@
   <ItemGroup>
     <Compile Include="ABTestPage.cs" />
     <Compile Include="AddRemoveTestPage.cs" />
+    <Compile Include="AlertTestPage.cs" />
+    <Compile Include="BasePage.cs" />
+    <Compile Include="BasicAuthTestPage.cs" />
+    <Compile Include="DragDropPage.cs" />
     <Compile Include="HomePage1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

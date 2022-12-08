@@ -29,8 +29,31 @@ namespace HerukoAppTests
         [TestMethod]
         public void Getlogs()
         {
-            AddRemoveTestPage testAdd = _page.navigateToAddRemoveTestPage();
-            testAdd.GetLogs();
+            _page.GetLogs();
+        }
+
+        [TestMethod]
+        public void VerifyBasicAuth()
+        {
+            BasicAuthTestPage test = _page.navigateToBasicAuthPage();
+          string heading = test.VerifyAuthenticationWithCorrectPassword("admin", "admin");
+            Assert.AreEqual("Basic Auth", heading);
+
+        }
+        [TestMethod]
+        public void AlertsHandlingWorks()
+        {
+            AlertTestPage resut = _page.navigateToAlerts();
+            resut.InvokeJsAlert();
+            string actualText = resut.getText();
+            resut.Accept();
+            Assert.AreEqual("I  am a JS Alert", actualText);
+        }
+
+        [TestMethod]
+        public void DragAtoB()
+        {
+            //DragDropPage restult = _page.navigateToDragDrop();
         }
     }
     

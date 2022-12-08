@@ -34,18 +34,5 @@ namespace HerukoAppPageObjects
             Console.WriteLine("Elements are remove for one item");
         }
 
-        public static void DisableAddRemoveTesting()
-        {
-            _driver.Manage().Cookies.AddCookie(new Cookie("optimizelyOptOut","True"));
-            _driver.Navigate().Refresh();
-        }
-
-        public void GetLogs()
-        {
-            ReadOnlyCollection<string> logtypes =  _driver.Manage().Logs.AvailableLogTypes;
-            Console.WriteLine(_driver.Manage().Logs.GetLog(logtypes[0])); 
-
-            
-        }
     }
 }

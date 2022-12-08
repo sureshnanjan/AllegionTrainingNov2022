@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="IABTesting.cs" />
     <Compile Include="IAddRemoveElements.cs" />
+    <Compile Include="IBasicAuth.cs" />
     <Compile Include="ICommon.cs" />
     <Compile Include="IDynamicContent.cs" />
     <Compile Include="IFrames.cs" />
