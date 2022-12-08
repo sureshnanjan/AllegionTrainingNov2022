@@ -25,6 +25,13 @@ namespace HerukoAppTests
             AddRemoveTestPage testAdd = _page.navigateToAddRemoveTestPage();
             testAdd.AddElementForOneItem();           
         }
+
+        [TestMethod]
+        public void Getlogs()
+        {
+            AddRemoveTestPage testAdd = _page.navigateToAddRemoveTestPage();
+            testAdd.GetLogs();
+        }
     }
     
 }

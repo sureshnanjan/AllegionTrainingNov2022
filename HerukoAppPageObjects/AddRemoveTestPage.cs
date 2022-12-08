@@ -3,6 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,6 +38,14 @@ namespace HerukoAppPageObjects
         {
             _driver.Manage().Cookies.AddCookie(new Cookie("optimizelyOptOut","True"));
             _driver.Navigate().Refresh();
+        }
+
+        public void GetLogs()
+        {
+            ReadOnlyCollection<string> logtypes =  _driver.Manage().Logs.AvailableLogTypes;
+            Console.WriteLine(_driver.Manage().Logs.GetLog(logtypes[0])); 
+
+            
         }
     }
 }
