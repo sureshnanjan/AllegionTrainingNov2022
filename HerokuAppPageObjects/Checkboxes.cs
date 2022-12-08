@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HerokuApp.Operations;
 
-namespace HerokuAppPageObjects
+namespace HerokuAppWebImplementation
 {
     public class Checkboxes : ICheckboxes
     {
