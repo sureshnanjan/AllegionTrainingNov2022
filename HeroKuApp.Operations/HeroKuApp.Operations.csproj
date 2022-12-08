@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86F4AC1A-16AE-419D-B65B-DE88BF7D60AF}</ProjectGuid>
+    <ProjectGuid>{AB37B588-99AB-4C5A-A731-D26D4D06F02F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HerokuAppPageObjects</RootNamespace>
-    <AssemblyName>HerokuAppPageObjects</AssemblyName>
+    <RootNamespace>HeroKuApp.Operations</RootNamespace>
+    <AssemblyName>HeroKuApp.Operations</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,8 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ABTestPage.cs" />
-    <Compile Include="HomePage.cs" />
+    <Compile Include="IFloatingMenu.cs" />
+    <Compile Include="IABTesting.cs" />
+    <Compile Include="IDisappearingElements.cs" />
+    <Compile Include="IDropDown.cs" />
+    <Compile Include="IHomePage.cs" />
+    <Compile Include="IJQueryUIMenus.cs" />
+    <Compile Include="IRedireckLinks.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
