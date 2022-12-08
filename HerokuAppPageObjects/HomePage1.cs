@@ -51,5 +51,10 @@ namespace HerokuApp.WebImplementation
         public void CloseBrowser() {
             this._driver.Close();
         }
+        public void DisableABTesting()
+        {
+            this._driver.Manage().Cookies.AddCookie(new Cookie("optimizelyOptOut", "true"));
+            this._driver.Navigate().Refresh();
+        }
     }
 }
