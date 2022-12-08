@@ -52,7 +52,7 @@
   <ItemGroup>
     <Compile Include="ABTestPage.cs" />
     <Compile Include="AddRemoveElements.cs" />
-    <Compile Include="HomePage.cs" />
+    <Compile Include="HomePage1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
