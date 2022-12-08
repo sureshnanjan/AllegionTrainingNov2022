@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace Heruko.Operations
 {
-    public interface IHomePage
+    public interface IAddRemoveElements
     {
-        string verifyHeading();
-        void verifySubHeading();
-        void verifyNumberOfFeatures();
-        void verifyFooter();
+        void AddElementForOneItem();
+        void RemoveElementForOneItem();
 
     }
 }
