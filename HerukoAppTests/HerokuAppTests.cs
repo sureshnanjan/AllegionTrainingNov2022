@@ -33,13 +33,20 @@ namespace HerukoAppTests
         }
 
         [TestMethod]
-        public void VerifyBasicAuth()
+        public void VerifyBasicAuthForCorrectCredentials()
         {
-            BasicAuthTestPage test = _page.navigateToBasicAuthPage();
-          string heading = test.VerifyAuthenticationWithCorrectPassword("admin", "admin");
-            Assert.AreEqual("Basic Auth", heading);
+            BasicAuthTestPage check = _page.navigateToBasicAuthPage("admin","admin");
+            Assert.AreEqual("Basic Auth", check.VerifyHeading());
 
         }
+
+        [TestMethod]
+        public void VerifyBasicAuthForIncorrectCredentials()
+        {
+            BasicAuthTestPage result = _page.navigateToBasicAuthPage("a","an");
+            Assert.AreNotEqual("Basic Auth",result.VerifyHeading());
+        }
+
         [TestMethod]
         public void AlertsHandlingWorks()
         {

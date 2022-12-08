@@ -8,37 +8,35 @@ using System.Threading.Tasks;
 
 namespace HerukoAppPageObjects
 {
-   public class BasicAuthTestPage : IBasicAuth
+   public class BasicAuthTestPage : IBasicAuth,ICommon
     {
         private IWebDriver _driver;
+        private By paragraph = By.TagName("p");
         private By heading = By.TagName("h3");
 
         public BasicAuthTestPage(IWebDriver driver)
         {
-            _driver = driver;
+            this._driver = driver;
         }
-
-        public string VerifyAuthenticationWithCorrectPassword(string username, string password)
+        public string VerifyHeading()
         {
-          _driver.Navigate().GoToUrl($"https://{username}:{password}@the-internet.herokuapp.com/basic_auth");
-            return _driver.FindElement(heading).Text;
-
+           return _driver.FindElement(heading).Text;
+        }
+        public bool Verifyparagraph()
+        {
+            return _driver.FindElement(paragraph).Displayed;
         }
 
-        public string VerifyAuthenticationWithCorrectPassword()
+        public void WhetherForkMeOnGithubIsRouting()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void VerifyTheFooterWorksOrnot()
         {
             throw new NotImplementedException();
         }
 
-        public string VerifyAuthenticationWithIncorrectPassword(string username,string password)
-        {
-            _driver.Navigate().GoToUrl($"https://{username}:{password}@the-internet.herokuapp.com/basic_auth");
-            return _driver.FindElement(heading).Text;
-        }
-
-        public void VerifyAuthenticationWithIncorrectPassword()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

@@ -8,9 +8,8 @@ namespace Heruko.Operations
 {
     public interface IBasicAuth
     {
-        string VerifyAuthenticationWithCorrectPassword();
-        void VerifyAuthenticationWithIncorrectPassword();
 
+        bool Verifyparagraph();
 
     }
 }

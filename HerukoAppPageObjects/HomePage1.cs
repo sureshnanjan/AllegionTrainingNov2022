@@ -1,7 +1,7 @@
 ﻿using Heruko.Operations;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Edge;
 using System;
 using OpenQA.Selenium;
 using HerukoAppPageObjects;
@@ -24,7 +24,7 @@ namespace HerukoAppWebImplementations
             {
                 case "chrome": _driver = new RemoteWebDriver(new Uri("http://localhost:9515"), new ChromeOptions());
                     break;
-                case "firefox": _driver = new RemoteWebDriver(new Uri("http://localhost:9515"), new FirefoxOptions()); break;
+                case "edge": _driver = new RemoteWebDriver(new Uri("http://localhost:9515"), new EdgeOptions()); break;
                 default:
                     _driver = new ChromeDriver(); break;
             }
@@ -42,9 +42,9 @@ namespace HerukoAppWebImplementations
             return new AddRemoveTestPage(_driver);
         }
 
-        public BasicAuthTestPage navigateToBasicAuthPage()
+        public BasicAuthTestPage navigateToBasicAuthPage(string username,string password)
         {
-            
+            _driver.Navigate().GoToUrl($"https://{username}:{password}@the-internet.herokuapp.com/basic_auth");
             return new BasicAuthTestPage(_driver);
         }
         public void verifyFooter()

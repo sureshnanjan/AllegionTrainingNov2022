@@ -10,7 +10,7 @@ namespace Heruko.Operations
     {
         void WhetherForkMeOnGithubIsRouting();
         void VerifyTheFooterWorksOrnot();
-        void VerifyHeading();
+        string VerifyHeading();
 
     }
 }
