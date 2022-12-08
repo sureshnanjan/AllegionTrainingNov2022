@@ -10,9 +10,6 @@ namespace Heroku.Operations
     {
         void verifyParagraph();
         void verifyHeading();
-
-
-
-        string paragraph { get; }
+        string Paragraph { get; }
     }
 }
