@@ -9,6 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAllegionUtility", "MyAlle
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestAllegionUtility", "TestAllegionUtility\TestAllegionUtility.csproj", "{6BE60591-C729-4F37-9B0E-DCAB962E0706}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuAppTests", "HerokuAppTests\HerokuAppTests.csproj", "{CCFDF2C3-5CF8-4D55-9379-B1ADA0968288}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.WebImplementation", "HerokuAppPageObjects\HerokuApp.WebImplementation.csproj", "{6ECE3191-6070-4F33-8606-060688DD35B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.Operations", "HerokuApp.Operations\HerokuApp.Operations.csproj", "{AB60AEFE-17F8-4CEE-8332-5651275D9C85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.MobileImplementation", "HerokuApp.MobileImplementation\HerokuApp.MobileImplementation.csproj", "{C336CD58-D889-483A-AB08-E3BF8A0EC630}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +35,22 @@ Global
 		{6BE60591-C729-4F37-9B0E-DCAB962E0706}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BE60591-C729-4F37-9B0E-DCAB962E0706}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BE60591-C729-4F37-9B0E-DCAB962E0706}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCFDF2C3-5CF8-4D55-9379-B1ADA0968288}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCFDF2C3-5CF8-4D55-9379-B1ADA0968288}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCFDF2C3-5CF8-4D55-9379-B1ADA0968288}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCFDF2C3-5CF8-4D55-9379-B1ADA0968288}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6ECE3191-6070-4F33-8606-060688DD35B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6ECE3191-6070-4F33-8606-060688DD35B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6ECE3191-6070-4F33-8606-060688DD35B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6ECE3191-6070-4F33-8606-060688DD35B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB60AEFE-17F8-4CEE-8332-5651275D9C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB60AEFE-17F8-4CEE-8332-5651275D9C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB60AEFE-17F8-4CEE-8332-5651275D9C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB60AEFE-17F8-4CEE-8332-5651275D9C85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C336CD58-D889-483A-AB08-E3BF8A0EC630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C336CD58-D889-483A-AB08-E3BF8A0EC630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C336CD58-D889-483A-AB08-E3BF8A0EC630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C336CD58-D889-483A-AB08-E3BF8A0EC630}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
