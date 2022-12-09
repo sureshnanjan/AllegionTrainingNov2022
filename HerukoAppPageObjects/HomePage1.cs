@@ -54,7 +54,8 @@ namespace HerukoAppWebImplementations
 
         public string verifyHeading()
         {
-            throw new NotImplementedException();
+           IWebElement data =    _driver.FindElement(By.TagName("h1"));
+            return (data.Text);
         }
 
         public void verifyNumberOfFeatures()

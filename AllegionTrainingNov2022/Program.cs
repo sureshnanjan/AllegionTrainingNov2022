@@ -24,6 +24,7 @@ namespace AllegionTrainingNov2022
             ChromeDriver _browser = new ChromeDriver();
             _browser.Url = "https://the-internet.herokuapp.com";
             Console.WriteLine(_browser.Title);
+
             IWebElement headingElement = _browser.FindElement(By.TagName("H1"));
             string actulalHEadingText = headingElement.Text;
             if (actulalHEadingText.Equals("Welcome to the-internet"))
