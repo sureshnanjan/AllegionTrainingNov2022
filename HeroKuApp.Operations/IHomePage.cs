@@ -13,8 +13,6 @@ namespace HeroKuApp.Operations
 
         string VerifyHomePageDescription();
 
-        void RouteTopage(string pageName);
-
         void VerifyImageIsVisible();
 
         void VerifyImageLinkIsWorking();
@@ -22,5 +20,7 @@ namespace HeroKuApp.Operations
         void VerifyFooter();
 
         void VerifyFooterLinkIsWorking();
+
+        void BrowserClose();
     }
 }

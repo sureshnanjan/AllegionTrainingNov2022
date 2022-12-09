@@ -7,17 +7,68 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
+using System.CodeDom;
+using OpenQA.Selenium.Edge;
 
 namespace HeroKuApp.WebImplementation
 {
     public class HomePage : IHomePage
     {
-        
-        public void RouteTopage(string pageName)
-        {
-            throw new NotImplementedException();
-        }
+        private IWebDriver _remotedriver;
+        private By headingLink = By.TagName("h1");
+        private By descriptionLink = By.TagName("h2");
+        private By abTestingLink = By.LinkText("A/B Testing");
+        private By basicAuthLink = By.LinkText("Basic Auth");
+        private By javaScriptAlert = By.LinkText("JavaScript Alerts");
+        private By dragAndDrop = By.LinkText("Drag and Drop");
 
+        public HomePage(string browser)
+        {
+            switch (browser)
+            {
+                case "chrome":
+                    _remotedriver = new ChromeDriver();
+                    //_remotedriver.Url = "https://the-internet.herokuapp.com/";
+                    break;
+                case "edge":
+                    _remotedriver = new EdgeDriver();
+                    //_remotedriver.Url = "https://the-internet.herokuapp.com/";
+                    break;
+                case "remote":
+                    _remotedriver = new RemoteWebDriver(new Uri("http://localhost:9515"), new ChromeOptions());
+                    //_remotedriver.Url = "https://the-internet.herokuapp.com/";
+                    break;
+                default:
+                    break;
+            }
+            _remotedriver.Navigate().GoToUrl("https://the-internet.herokuapp.com/");
+        }
+        
+
+        public ABTesting NavigateToABTesting()
+        {
+            _remotedriver.FindElement(abTestingLink).Click();
+            return new ABTesting(_remotedriver);        
+        }
+        public BasicAuth NavigateToBasicAuth(string username, string password)
+        {
+            _remotedriver.Navigate().GoToUrl($"https://{username}:{password}@the-internet.herokuapp.com/basic_auth");
+            return new BasicAuth(_remotedriver);
+        }
+        public JavaScriptAlert NavigateToJavaScriptAlert()
+        {
+            _remotedriver.FindElement(javaScriptAlert).Click();
+            return new JavaScriptAlert(_remotedriver);
+        }
+        public DragAndDrop NavigateToDragAndDrop()
+        {
+            _remotedriver.FindElement(dragAndDrop).Click();
+            return new DragAndDrop(_remotedriver);
+        }
+        public void DisableABTestingUsingCookies() 
+        {
+            _remotedriver.Manage().Cookies.AddCookie(new Cookie("optimizelyOptOut", "true") );
+        }
         public void VerifyFooter()
         {
             throw new NotImplementedException();
@@ -35,9 +86,7 @@ namespace HeroKuApp.WebImplementation
 
         public string VerifyHomePageHeading()
         {
-            RemoteWebDriver _remotebrowser = new RemoteWebDriver(new Uri("http://localhost:9515"), new ChromeOptions());
-            _remotebrowser.Url = "https://the-internet.herokuapp.com/";
-            IWebElement selectHeading = _remotebrowser.FindElementByXPath("//h1[@class='heading']");
+            IWebElement selectHeading = _remotedriver.FindElement(headingLink);
             string actual = selectHeading.Text;
             Console.WriteLine(actual);
             return actual;
@@ -51,6 +100,11 @@ namespace HeroKuApp.WebImplementation
         public void VerifyImageLinkIsWorking()
         {
             throw new NotImplementedException();
+        }
+
+        public void BrowserClose()
+        {
+            _remotedriver.Close();
         }
     }
 }

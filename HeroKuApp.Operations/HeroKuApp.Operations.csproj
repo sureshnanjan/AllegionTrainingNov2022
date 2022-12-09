@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBasicAuth.cs" />
+    <Compile Include="IDragAndDrop.cs" />
     <Compile Include="IFloatingMenu.cs" />
     <Compile Include="IABTesting.cs" />
     <Compile Include="IDisappearingElements.cs" />
@@ -48,6 +50,7 @@
     <Compile Include="IHomePage.cs" />
     <Compile Include="IJQueryUIMenus.cs" />
     <Compile Include="IRedireckLinks.cs" />
+    <Compile Include="IJavaScriptAlert.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace HeroKuApp.Operations
 {
-    public interface IABTesting
+    public interface IDragAndDrop
     {
-        void VerifyABTestingPageParagraph();
-
-        string VerifyABTestingPageHeading();
 
     }
 }

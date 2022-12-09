@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace HeroKuApp.Operations
 {
-    public interface IABTesting
+    public interface IBasicAuth
     {
-        void VerifyABTestingPageParagraph();
-
-        string VerifyABTestingPageHeading();
-
+        string VerifyBasicAuthHeading();
     }
 }

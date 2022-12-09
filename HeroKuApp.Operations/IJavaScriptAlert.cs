@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace HeroKuApp.Operations
 {
-    public interface IABTesting
+    public interface IJavaScriptAlert
     {
-        void VerifyABTestingPageParagraph();
-
-        string VerifyABTestingPageHeading();
+        void ClickOnJSAlertItem(int item);
+        string GetJavaScriptText();
+        void AcceptJavaScriptAlert();
 
     }
 }

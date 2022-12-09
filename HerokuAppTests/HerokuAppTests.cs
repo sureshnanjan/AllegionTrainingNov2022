@@ -9,71 +9,63 @@ using HeroKuApp.WebImplementation;
 
 namespace HerokuAppTests
 {
-    /// <summary>
-    /// 
-    /// </summary>
-
     [TestClass]
-
     public class HerokuAppTests
     {
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        //[TestMethod]
-        //public void AddRemoveElementsWorkCorrectlyForOneElement()
-        //{
-        //    RemoteWebDriver _remotebrowser = new RemoteWebDriver(new Uri("http://localhost:9515"), new ChromeOptions());
-        //    _remotebrowser.Url = "https://the-internet.herokuapp.com/";
+        private HomePage _page;
 
-        //    IWebElement addRemoveElementLinkClick = _remotebrowser.FindElementByXPath("//a[text()='Add/Remove Elements']");
-        //    addRemoveElementLinkClick.Click();
-
-        //    IWebElement addRemoveElementButtonClick = _remotebrowser.FindElementByXPath("//button[text()='Add Element']");
-        //    addRemoveElementButtonClick.Click();
-
-        //    ReadOnlyCollection<IWebElement> mydeletcollection = _remotebrowser.FindElementsByXPath("//button[@class='added-manually']");
-
-        //    Assert.AreEqual(1, mydeletcollection.Count);
-        //}
-        ///// <summary>
-        ///// 
-        ///// </summary>
-
-        //[DataTestMethod]
-        //[DataRow(1, 1)]
-        //[DataRow(2, 2)]
-        //[DataRow(3, 3)]
-        //public void AddRemoveElementsWorkCorrectlyForDataDrivenElement(int noOfClicks, int expected)
-        //{
-
-        //    RemoteWebDriver _remotebrowser = new RemoteWebDriver(new Uri("http://localhost:9515"), new ChromeOptions());
-        //    _remotebrowser.Url = "https://the-internet.herokuapp.com/";
-
-        //    IWebElement addRemoveElementLinkClick = _remotebrowser.FindElementByXPath("//a[text()='Add/Remove Elements']");
-        //    addRemoveElementLinkClick.Click();
-
-        //    for (int i = 1; i <= noOfClicks; i++)
-        //    {
-        //        IWebElement addRemoveElementButtonClick = _remotebrowser.FindElementByXPath("//button[text()='Add Element']");
-        //        addRemoveElementButtonClick.Click();
-        //    }
-
-        //    ReadOnlyCollection<IWebElement> mydeletcollection = _remotebrowser.FindElementsByXPath("//button[@class='added-manually']");
-
-        //    Assert.AreEqual(expected, mydeletcollection.Count);
-        //}
+        [TestInitialize]
+        public void Initialized()
+        {
+            _page = new HomePage("edge");   
+        }
+ //-----------------------------------------------------------------------------------------
+        [TestMethod]
+        public void ABTestingPageVerifyHeadingTC()
+        {
+            ABTesting test1 = _page.NavigateToABTesting(); 
+            Assert.AreEqual("A/B Test Control", test1.VerifyABTestingPageHeading());
+        }
 
         [TestMethod]
-
-        ///<summary>
-        ///</summary>
-
-        public void VerifyHomePageHeadingTC()
+        public void BasicAuthPageVerifyAuthenticationTC() 
         {
-            HomePage myHomePage = new HomePage();
-            string actual = myHomePage.VerifyHomePageHeading();
-            Assert.AreEqual("Welcome to the-internet", actual);
+            BasicAuth test1= _page.NavigateToBasicAuth("admin","admin");
+            Assert.AreEqual("Basic Auth", test1.VerifyBasicAuthHeading());
+        }
+
+        [TestMethod]
+        public void ABTestingPageCookiesDisabledTC() 
+        {
+            _page.DisableABTestingUsingCookies();
+            ABTesting test1 = _page.NavigateToABTesting();
+            Assert.AreEqual("No A/B Test", test1.VerifyABTestingPageHeading());
+        }
+
+        [DataTestMethod]
+        [DataRow(1, "I am a JS Alert")]
+        [DataRow(2, "I am a JS Confirm")]
+        [DataRow(3, "I am a JS prompt")]
+        public void VerifyJavaScriptAlertsPageTC2(int num, string expected)
+        {
+            JavaScriptAlert test1 = _page.NavigateToJavaScriptAlert();
+            test1.ClickOnJSAlertItem(num);
+            string actual = test1.GetJavaScriptText();
+            test1.AcceptJavaScriptAlert();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        public void DragAndDropPageTc()
+        {
+            DragAndDrop test = _page.NavigateToDragAndDrop();
+            string actual = test.DragAndDropAction();
+            Assert.AreEqual("B",actual);
+        }
+        //-----------------------------------------------------------------------------------------
+        [TestCleanup]
+        public void CleanupTest()
+        {
+            _page.BrowserClose();
         }
     }
 }
