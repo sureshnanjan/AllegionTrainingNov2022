@@ -9,6 +9,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Remote;
 using System.CodeDom;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Support.Extensions;
 
 namespace HeroKuApp.WebImplementation
 {
@@ -99,6 +100,7 @@ namespace HeroKuApp.WebImplementation
 
         public void VerifyImageLinkIsWorking()
         {
+            //_remotedriver.TakeScreenshot().SaveAsFile("mones",ScreenshotImageFormat.Jpeg);
             throw new NotImplementedException();
         }
 
