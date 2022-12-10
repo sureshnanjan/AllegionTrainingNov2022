@@ -12,6 +12,13 @@ namespace AllegionTrainingNov2022
     {
         static void Main(string[] args)
         {
+            TestString One = new TestString("niku");
+            TestString Two = new TestString("mama");
+
+            TestString result = One + Two;
+            result.display();
+            Console.ReadKey();
+            /*
             MyAllegionUtility.Geetings inst1 = new MyAllegionUtility.Geetings();
             string ans1 = inst1.SayHelloQA();
             if (ans1.Equals("Welcome to QA"))
@@ -37,9 +44,35 @@ namespace AllegionTrainingNov2022
            // Console.WriteLine(headingElement.Text);
            // _browser.Close();
 
+            */
 
 
+        }
+        public class TestString
+        {
+            private string mytext;
 
+            public TestString(string text)
+            {
+                this.mytext = text;
+            }
+
+            public TestString()
+            {
+
+            }
+
+            public static TestString operator +(TestString one, TestString two)
+            {
+                TestString three = new TestString();
+                three.mytext = one.mytext + two.mytext;
+                return three;
+            }
+
+            internal void display()
+            {
+                Console.WriteLine(mytext);
+            }
         }
     }
 }

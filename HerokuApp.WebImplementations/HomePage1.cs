@@ -23,10 +23,10 @@ namespace HerokuApp.WebImplementations
             // Reading Things from Config File
             switch (readConfig("browser"))
             {
-                case "chrome":
+                case "chrome11":
                     _driver = new RemoteWebDriver(new Uri("http://localhost:8085"), new ChromeOptions());
                     break;
-                case "firefox":
+                case "firefox12":
                     _driver = new RemoteWebDriver(new Uri("http://localhost:8086"), new FirefoxOptions());
                     break;
                 default:
@@ -43,6 +43,11 @@ namespace HerokuApp.WebImplementations
         {
             _driver.FindElement(abtestLink).Click();
             return new ABTestPage(_driver);
+        }
+        public string verifyHeading()
+        {
+            IWebElement data = _driver.FindElement(By.TagName("h1"));
+            return (data.Text);
         }
 
         private string readConfig(string item)
@@ -69,8 +74,10 @@ namespace HerokuApp.WebImplementations
             _driver.Navigate().GoToUrl($"https://{uname}:{pass}@the-internet.herokuapp.com/basic_auth");
             return new BasicAuth(_driver);
         }
+       
+       
 
 
 
-        }
+    }
     }

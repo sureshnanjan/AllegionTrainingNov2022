@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heroku.Operations", "Heruko
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuApp.MobileImplementations", "HerokoApp.MobileImplementations\HerokuApp.MobileImplementations.csproj", "{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HerokuAppEndToEnd", "HerokuAppEndToEnd\HerokuAppEndToEnd.csproj", "{07DD4335-8C80-4655-876A-DB473FB82876}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EC2EEC3-251A-43CA-AC9B-9532D3FF5C1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07DD4335-8C80-4655-876A-DB473FB82876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07DD4335-8C80-4655-876A-DB473FB82876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07DD4335-8C80-4655-876A-DB473FB82876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07DD4335-8C80-4655-876A-DB473FB82876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
