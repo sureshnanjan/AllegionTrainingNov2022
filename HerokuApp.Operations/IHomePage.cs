@@ -8,7 +8,7 @@ namespace HerokuApp.Operations
 {
     public interface IHomePage
     {
-        void verifyHeadder();
+        string verifyHeadder();
 
         void verifySubheading();
 

@@ -12,6 +12,7 @@ namespace AllegionTrainingNov2022
     {
         static void Main(string[] args)
         {
+            
 
             //ChromeDriver _browser = new ChromeDriver();
             EdgeDriver _browser = new EdgeDriver();
@@ -58,5 +59,7 @@ namespace AllegionTrainingNov2022
             //g.SayHelloTimes(-2, "Allegion");
             //Console.ReadKey();
         }
-        }
+
     }
+}
+    

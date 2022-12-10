@@ -18,6 +18,8 @@ namespace HerokuAppWebImplementation
         private static By abtestlink = By.LinkText("A/B Testing");
         private static By alertslink = By.LinkText("JavaScript Alerts");
         private static By dragdroplink = By.LinkText("Drag And Drop");
+       ;
+
         public HomePage1()
         {
             switch(readConfig("browser"))
@@ -52,10 +54,11 @@ namespace HerokuAppWebImplementation
             return "chrome1";
         }
 
-        public void verifyHeadder()
-            {
-                throw new NotImplementedException();
-            }
+        public string verifyHeadder()
+        {
+            IWebElement headertext = _driver.FindElement(By.TagName("h1"));
+            return headertext.Text;
+        }
 
             public void verifySubheading()
             {
@@ -82,6 +85,11 @@ namespace HerokuAppWebImplementation
         {
             this._driver.FindElement(dragdroplink).Click();
             return new DragDropPage(this._driver);
+        }
+
+        string IHomePage.verifyHeadder()
+        {
+            throw new NotImplementedException();
         }
     }
     
