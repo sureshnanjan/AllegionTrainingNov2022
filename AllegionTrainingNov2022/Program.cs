@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 namespace AllegionTrainingNov2022
@@ -11,7 +12,18 @@ namespace AllegionTrainingNov2022
     {
         static void Main(string[] args)
         {
-            MyAllegionUtility.Geetings inst1 = new MyAllegionUtility.Geetings();
+
+            TestString testOne = new TestString("mama");
+            TestString testTwo = new TestString("Hola");
+
+             //testOne[0];
+            //testOne + testTwo;
+
+            TestString three = testOne + testTwo;
+            three.display();
+            Console.ReadKey();
+
+            /*MyAllegionUtility.Geetings inst1 = new MyAllegionUtility.Geetings();
             string ans1 = inst1.SayHelloQA();
             if (ans1.Equals("Welcome to QA"))
             {
@@ -38,7 +50,34 @@ namespace AllegionTrainingNov2022
             _browser.Close();
             // headingElement.Text
             // Console.WriteLine(headingElement.Text);
-            // _browser.Close();
+             _browser.Close();*/
+        }
+
+        public class TestString
+        {
+            private string text;
+          
+            public TestString(string text)
+            {
+                this.text = text;
+            }
+
+            public TestString()
+            {
+
+            }
+
+            public static TestString operator +(TestString one, TestString two)
+            {
+                TestString three = new TestString();
+                three.text = one.text + two.text;
+                return three;
+            }
+
+            internal void display()
+            {
+                Console.WriteLine(text);
+            }
         }
     }
 }
