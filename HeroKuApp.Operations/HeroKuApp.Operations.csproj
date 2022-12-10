@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBasicAuth.cs" />
+    <Compile Include="ICheckboxes.cs" />
     <Compile Include="IDragAndDrop.cs" />
     <Compile Include="IFloatingMenu.cs" />
     <Compile Include="IABTesting.cs" />

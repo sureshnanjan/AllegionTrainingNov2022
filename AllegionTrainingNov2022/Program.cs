@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Interactions;
+using System.Drawing.Text;
 
 namespace AllegionTrainingNov2022
 {
@@ -13,25 +15,31 @@ namespace AllegionTrainingNov2022
     {
         static void Main(string[] args)
         {
-            //ChromeDriver _chbrowser = new ChromeDriver();
+           
+            ChromeDriver _browser = new ChromeDriver();
             //FirefoxDriver _browser = new FirefoxDriver();
-            RemoteWebDriver _browser = new RemoteWebDriver(new Uri("http://localhost:8085"), new ChromeOptions());
+            //RemoteWebDriver _browser = new RemoteWebDriver(new Uri("http://localhost:8085"), new ChromeOptions());
             _browser.Url = "https://the-internet.herokuapp.com/";
-            Console.WriteLine(_browser.Title);
-            ChromeOptions opts= new ChromeOptions();
-         
-            IWebElement headingElement = _browser.FindElement(By.TagName("H1"));
-            string actualHeadingText = headingElement.Text;
-            if (actualHeadingText.Equals("Welcome to the-internet"))
-            {
-                Console.WriteLine("Yes The the test is success");
-            }
-            else
-            {
-                Console.WriteLine("No its a failure");
-            }
+            //Console.WriteLine(_browser.Title);
+            //ChromeOptions opts= new ChromeOptions();
+
+            //IWebElement headingElement = _browser.FindElement(By.TagName("H1"));
+            //string actualHeadingText = headingElement.Text;
+            //if (actualHeadingText.Equals("Welcome to the-internet"))
+            //{
+            //    Console.WriteLine("Yes The the test is success");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No its a failure");
+            //}
             //headingElement.Text;
-            _browser.Close();
-            }
+            //_browser.Close();
+            
+            _browser.FindElement(By.LinkText("Checkboxes")).Click();
+            IWebElement checkbox1 = _browser.FindElement(By.XPath("//input[1]"));
+            Actions mango = new Actions(_browser);
+            mango.Click(checkbox1);
+        }
     }
 }

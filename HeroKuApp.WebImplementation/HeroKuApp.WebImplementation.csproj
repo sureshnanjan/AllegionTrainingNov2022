@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="ABTesting.cs" />
     <Compile Include="BasicAuth.cs" />
+    <Compile Include="Checkboxes.cs" />
     <Compile Include="DragAndDrop.cs" />
     <Compile Include="HomePage.cs" />
     <Compile Include="JavaScriptAlert.cs" />

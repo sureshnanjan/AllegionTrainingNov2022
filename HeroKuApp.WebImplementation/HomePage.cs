@@ -22,7 +22,8 @@ namespace HeroKuApp.WebImplementation
         private By basicAuthLink = By.LinkText("Basic Auth");
         private By javaScriptAlert = By.LinkText("JavaScript Alerts");
         private By dragAndDrop = By.LinkText("Drag and Drop");
-        
+        private By checkboxes = By.LinkText("Checkboxes");
+
 
         public HomePage(string browser)
         {
@@ -66,6 +67,11 @@ namespace HeroKuApp.WebImplementation
         {
             _remotedriver.FindElement(dragAndDrop).Click();
             return new DragAndDrop(_remotedriver);
+        }
+        public Checkboxes NavigateToCheckboxes()
+        {
+            _remotedriver.FindElement(checkboxes).Click();
+            return new Checkboxes(_remotedriver);
         }
         public void DisableABTestingUsingCookies() 
         {

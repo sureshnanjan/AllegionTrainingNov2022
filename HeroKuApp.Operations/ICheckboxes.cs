@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HeroKuApp.MobileImplementation
+namespace HeroKuApp.Operations
 {
-    public class HomePage
+    public interface ICheckboxes
     {
     }
 }
