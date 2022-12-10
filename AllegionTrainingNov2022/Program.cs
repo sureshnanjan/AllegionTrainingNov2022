@@ -33,6 +33,5 @@ namespace AllegionTrainingNov2022
             //headingElement.Text;
             _browser.Close();
             }
-
     }
 }

@@ -22,6 +22,7 @@ namespace HeroKuApp.WebImplementation
         private By basicAuthLink = By.LinkText("Basic Auth");
         private By javaScriptAlert = By.LinkText("JavaScript Alerts");
         private By dragAndDrop = By.LinkText("Drag and Drop");
+        
 
         public HomePage(string browser)
         {
@@ -100,8 +101,12 @@ namespace HeroKuApp.WebImplementation
 
         public void VerifyImageLinkIsWorking()
         {
-            //_remotedriver.TakeScreenshot().SaveAsFile("mones",ScreenshotImageFormat.Jpeg);
             throw new NotImplementedException();
+        }
+
+        public void TakeScreenshot(string name)
+        {
+            _remotedriver.TakeScreenshot().SaveAsFile(name, ScreenshotImageFormat.Jpeg);
         }
 
         public void BrowserClose()

@@ -1,11 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using OpenQA.Selenium.Remote;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium;
-using System.Collections.ObjectModel;
-using System.Linq;
 using HeroKuApp.WebImplementation;
+
 
 namespace HerokuAppTests
 {
@@ -13,18 +8,26 @@ namespace HerokuAppTests
     public class HerokuAppTests
     {
         private HomePage _page;
+        private static TestContext context;
+        private UnitTestOutcome result;
 
+        [ClassInitialize]
+        public static void ClassInitialized(TestContext ctx)
+        {
+            context = ctx;
+        }
+                
         [TestInitialize]
         public void Initialized()
         {
-            _page = new HomePage("edge");   
+            _page = new HomePage("edge");
         }
  //-----------------------------------------------------------------------------------------
         [TestMethod]
         public void ABTestingPageVerifyHeadingTC()
         {
-            ABTesting test1 = _page.NavigateToABTesting(); 
-            Assert.AreEqual("A/B Test Control", test1.VerifyABTestingPageHeading());
+             ABTesting test1 = _page.NavigateToABTesting();
+             Assert.AreEqual("A/B Pest Control", test1.VerifyABTestingPageHeading());
         }
 
         [TestMethod]
@@ -65,6 +68,8 @@ namespace HerokuAppTests
         [TestCleanup]
         public void CleanupTest()
         {
+            result = context.CurrentTestOutcome;
+            if (result == UnitTestOutcome.Failed) { _page.TakeScreenshot($"{context.TestName}.jpg"); }
             _page.BrowserClose();
         }
     }
