@@ -1,4 +1,7 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Appium;
+using OpenQA.Selenium.Appium.Android;
+using OpenQA.Selenium.Appium.Enums;
 using OpenQA.Selenium.Edge;
 using System;
 using System.Collections.Generic;
@@ -10,9 +13,17 @@ namespace AllegionTrainingNov2022
 {
     internal class Program
     {
+        private static AndroidDriver<AppiumWebElement> _driver;
+
         static void Main(string[] args)
         {
-            
+            //OldMethod();
+            getStarted();
+        }
+
+        private static void OldMethod()
+        {
+
 
             //ChromeDriver _browser = new ChromeDriver();
             EdgeDriver _browser = new EdgeDriver();
@@ -60,6 +71,17 @@ namespace AllegionTrainingNov2022
             //Console.ReadKey();
         }
 
+        public static void getStarted()
+        {
+            var appiumOptions = new AppiumOptions();
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Android_Accelerated_x86_Oreo");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformName, "Android");
+            appiumOptions.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "7.1");
+            //appiumOptions.AddAdditionalCapability(MobileCapabilityType.BrowserName, "Chrome");
+            AndroidDriver<AppiumWebElement> _driver = new AndroidDriver<AppiumWebElement>(_appiumLocalService, appiumOptions);
+        }
     }
+
+
 }
     
